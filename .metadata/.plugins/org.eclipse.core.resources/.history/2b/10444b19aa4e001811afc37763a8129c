@@ -1,0 +1,35 @@
+package geometries;
+
+
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Triangle extends Plane {
+	 private Point3D _P1;
+	 private Point3D _P2;
+	 private Point3D _P3;
+	 
+	
+	public Triangle(Point3D One, Point3D Two , Point3D Three) {
+		super (One);
+		this.set_P1(One);
+		this._P2 = Two;
+		this._P3 = Three;
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	@Override
+	public Vector GetNormal(Point3D _other) {
+		
+		return super.GetNormal(_other);
+	}
+	public Point3D get_P1() {
+		return _P1;
+	}
+	
+	
+	
+	
+	
+}

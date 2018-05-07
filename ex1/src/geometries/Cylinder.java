@@ -1,0 +1,34 @@
+package geometries;
+
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Cylinder extends RadialGeometry {
+	
+	private	Point3D _axisPoint;
+	private	Vector _axisDirection;
+	
+	public Cylinder(Point3D axisPoint, Vector axisDirection, double _Radios) {
+		super(_Radios);
+		_axisPoint = new Point3D(axisPoint);
+		_axisDirection = new Vector(axisDirection);
+	}
+
+	public Point3D get_axisPoint() {
+		return _axisPoint;
+	}
+
+	public Vector get_axisDirection() {
+		return _axisDirection;
+	}
+	
+	
+	@Override
+	public Vector GetNormal(Point3D _other) {
+		Vector a = new Point3D(_other).subtractVec(_axisPoint);
+		Vector c = new Vector(a.Scalar(a.DotProduct(a, get_axisDirection())/ get_axisDirection().length()));
+		
+		return get_axisPoint().subtractVec(c.get_vec());
+	}
+
+}

@@ -1,0 +1,20 @@
+package geometries;
+
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Cylinder extends RadialGeometry {
+	
+	private	Point3D _axisPoint;
+	private	Vector _axisDirection;
+	
+	public Cylinder(Point3D axisPoint, Vector axisDirection, double _Radios) {
+		super(_Radios);
+		_axisPoint = new Point3D(axisPoint);
+		_axisDirection = new Vector(axisDirection);
+	}
+	
+	
+	
+
+}

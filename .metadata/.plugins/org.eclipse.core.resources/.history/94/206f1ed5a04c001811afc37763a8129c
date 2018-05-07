@@ -1,0 +1,21 @@
+package geometries;
+
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Plane extends Geometry {
+
+	
+	
+	
+	
+	
+	@Override
+	public Vector GetNormal(Point3D _other) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+}

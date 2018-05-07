@@ -1,0 +1,27 @@
+package geometries;
+
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Plane extends Geometry {
+
+	Point3D _p;
+	Vector _normal;
+	
+	
+	public Plane(Point3D one) {
+		_p = new  Point3D(one);
+		_noraml = new Vector(one.getY().get(),- one.getX().get(), 0);
+	}
+	
+	
+	
+	@Override
+	public Vector GetNormal(Point3D _other) {
+		
+		return null;
+	}
+
+	
+	
+}

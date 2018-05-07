@@ -1,0 +1,19 @@
+package geometries;
+
+import primitives.Point3D;
+
+public class Triangle extends Geometry {
+	 private Point3D _One;
+	 private Point3D _Two;
+	 private Point3D _Three;
+	 
+	
+	public Triangle(Point3D One, Point3D Two , Point3D Three) {
+		this._One = One;
+		this._Two = Two;
+		this._Three = Three;
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

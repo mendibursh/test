@@ -1,0 +1,63 @@
+package primitives;
+
+public class Point3D extends Point2D {
+	private Coordinate _z;
+	
+	public static final Point3D ZERO = new Point3D(0,0,0);
+	public Point3D(Coordinate x, Coordinate y, Coordinate z) {
+		super(x,y);
+		if (z == null) throw new IllegalArgumentException("coordinate cannot be null");
+		_z = z;
+	}
+	
+	public Point3D(double x, double y , double z) {
+		super(x, y);
+		_z = new Coordinate(z);	
+	}
+	public Point3D (Point3D other) {
+		super(other);
+		_z = new Coordinate(this._z);
+	}
+	
+	
+public Point3D add (Vector other) {
+	double newX = this.getX().add(other.getX()).get();
+	double newY = this.getY().add(other.getY()).get();
+	double newZ = this.getZ().add(other.getZ()).get();
+	return new Point3D(newX,newY,newZ);
+}
+
+public Vector subtractVec (Point3D two) {
+	double newX = this.getX().subtract(two.getX()).get();
+	double newY = this.getY().subtract(two.getY()).get();
+	double newZ = this.getZ().subtract(two.getZ()).get();
+	return new Vector(newX,newY,newZ);
+}
+	
+ //public Vector Subtract(Point3D other) {}
+
+public double distance (Point3D one , Point3D two) {
+	double x = one.getX().get() - two.getX().get();
+	double y = one.getY().get() - two.getY().get();
+	double z = one.getZ().get() - two.getZ().get();
+	return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+	
+}
+
+public Coordinate getZ() {
+	return _z;
+}
+
+@Override
+public boolean equals(Object obj) {
+	if (!(obj instanceof Point3D))
+		return false;
+	Point3D oth = (Point3D)obj;
+	return super.equals(oth) && _z.equals(oth._z);
+}
+
+@Override
+public String toString() {
+	return "(" + getX() + "," + getY() + "," + _z + ")";
+}
+}

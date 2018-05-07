@@ -1,0 +1,29 @@
+package unittests;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.Test;
+
+import primitives.Vector;
+
+public class VectorTests {
+	
+	
+	
+	@Test
+	public void testNormalize(){
+		Vector v = new Vector(3.5,-5,10);
+		v.normalize();
+		assertEquals(v.length(),1e-10);
+		v = new Vector(0,0,0);
+		try {
+			v.normalize();
+			fail("Didn't throw divide by zero exception!");
+		} catch (ArithmeticException e) {
+			assertTrue(true);
+		}
+	}
+
+}

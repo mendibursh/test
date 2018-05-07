@@ -1,0 +1,16 @@
+import primitives.*;
+public class Camera {
+	
+	Point3D _p0;
+	Vector _vUp;
+	Vector _vTo;
+	Vector _vRight;
+	
+	public Camera(Point3D _p0, Vector _vUp, Vector _vTo, Vector _vRight) {
+		this._p0 = _p0;
+		this._vUp = _vUp;
+		this._vTo = _vTo;
+		this._vRight = _vRight;
+	}
+
+}

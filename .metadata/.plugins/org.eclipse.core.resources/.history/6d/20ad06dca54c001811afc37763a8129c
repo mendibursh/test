@@ -1,0 +1,37 @@
+package geometries;
+im
+import java.util.List;
+
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Triangle extends Geometry {
+	 private Point3D _P1;
+	 private Point3D _P2;
+	 private Point3D _P3;
+	 
+	
+	public Triangle(Point3D One, Point3D Two , Point3D Three) {
+		this._P1 = One;
+		this._P2 = Two;
+		this._P3 = Three;
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public Vector GetNormal(Point3D _other) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List <Point3D> getTriangle() {
+		List <Point3D> list1 = new List <Point3D> ();
+		list1.add(_P1);
+		list1.add(_P2);
+		list1.add(_P3);
+		return list1 ;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,11 @@
+package unittests;
+import org.junit.Test;
+
+import primitives.*;
+
+public class testNormalize {
+	
+	
+
+}
+

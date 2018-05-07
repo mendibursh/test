@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TreeTableRow"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="ex0.HourlyEmployee"/>
+    <fullyQualifiedTypeName name="ex0.CommissionEmployee"/>
+    <fullyQualifiedTypeName name="ex0.BasePlusCommissionEmployee"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="org.omg.CosNaming.IstringHelper"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.INSTANCEOF"/>
+    <fullyQualifiedTypeName name="ex0.Employee"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="primitives.Point2D"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="geometries.Triangle"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="geometries.Geometry"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="primitives.Coordinate"/>
+    <fullyQualifiedTypeName name="geometries.Plane"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="geometries.RadialGeometry"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="java.lang.Throwable"/>
+    <fullyQualifiedTypeName name="primitives.Point3D"/>
+    <fullyQualifiedTypeName name="primitives.Vector"/>
+    <fullyQualifiedTypeName name="jdk.incubator.http.internal.common.MinimalFuture.ExceptionalSupplier"/>
+    <fullyQualifiedTypeName name="org.omg.IOP.ExceptionDetailMessage"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+</qualifiedTypeNameHistroy>

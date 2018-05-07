@@ -1,0 +1,12 @@
+package geometries;
+
+abstract public class Geometry {
+
+		public Geometry() {
+			// TODO Auto-generated constructor stub
+		}
+		
+		public Geometry(Geometry Other){
+			
+		}
+}
