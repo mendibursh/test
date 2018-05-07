@@ -6,6 +6,7 @@ public class Camera  {
 	Vector _vUp;
 	Vector _vTo;
 	Vector _vRight;
+	int mendi = 100;
 	
 	public Camera(Point3D _p0, Vector _vUp, Vector _vTo) {
 		
