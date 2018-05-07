@@ -7,6 +7,8 @@ public class Camera  {
 	Vector _vTo;
 	Vector _vRight;
 	
+	int i = 0;
+	
 	public Camera(Point3D _p0, Vector _vUp, Vector _vTo) {
 		
 		if(_vUp == null || _vTo == null) 
