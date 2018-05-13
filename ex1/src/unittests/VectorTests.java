@@ -12,18 +12,17 @@ public class VectorTests {
 	
 	@Test
 	public void testAdd() {
-		Vector v = new Vector(5,-5,10);
-		Vector c = new Vector(-5,5,-10);
+		Vector v = new Vector(1,1,1);
+		Vector c = new Vector(2,2,2);
 		Vector d = v.add(c);
-		assertEquals(d.length(),0);
-		
+		assertEquals(d,new Vector(3,3,3));
 	}
 	
 	@Test
 	public void testNormalize(){
 		Vector v = new Vector(3.5,1.5,1.9);
 		v.normalize();
-		assertEquals(1 ,v.length());
+		assertEquals(1 ,v.length(), 0.0001);
 		v = new Vector(0,0,0);
 		try {
 			v.normalize();

@@ -1,9 +1,6 @@
 package geometries;
 
-import primitives.Point3D;
-import primitives.Vector;
-
-public class RadialGeometry extends Geometry {
+public abstract class RadialGeometry extends Geometry {
 
 	private double _radius;
 	
@@ -19,9 +16,4 @@ public class RadialGeometry extends Geometry {
 		return _radius;
 	}
 	
-	@Override
-	public Vector GetNormal(Point3D _other) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

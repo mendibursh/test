@@ -3,7 +3,10 @@ package primitives;
 public class Coordinate {
 	// private static final double EPSILON = 0.0000001;
 	private double _coord;
-
+	// It is binary, equivalent to ~1/1,000,000 in decimal (6 digits)
+	private static final int ACCURACY = -20;
+	public static final Coordinate ZERO = new Coordinate(0);
+	
 	/********** Constructors ***********/
 	public Coordinate(double coord) {
 		// if it too close to zero make it zero
@@ -22,8 +25,12 @@ public class Coordinate {
 	/*************** Admin *****************/
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) return true;
 		if (obj == null) return false;
+		if (this == obj) return true;
+		
+		if (obj instanceof Double)
+			return subtract((Double)obj) == 0.0;
+			
 		if (!(obj instanceof Coordinate)) return false;
 		
 		Coordinate other = (Coordinate) obj;
@@ -36,6 +43,11 @@ public class Coordinate {
 	}
 
 	/************** Operations ***************/
+	/**
+	 * Subtracts two coordinates - this minus other (param)
+	 * @param Coordinate
+	 * @return new Coordinate
+	 */
 	public Coordinate subtract(Coordinate other) {
 		return new Coordinate(subtract(other._coord));
 	}
@@ -45,8 +57,6 @@ public class Coordinate {
 	}
 	
 	/************** Helpers ***************/
-	// It is binary, equivalent to ~1/1,000,000 in decimal (6 digits)
-	private static final int ACCURACY = -20;
 
 	// double store format (bit level): seee eeee eeee (1.)mmmm … mmmm
 	// 1 bit sign, 11 bits exponent, 53 bits (52 stored) normalized mantissa
@@ -60,6 +70,11 @@ public class Coordinate {
 		return (int) ((Double.doubleToRawLongBits(num) >> 52) & 0x7FFL) - 1023;
 	}
 
+	/**
+	 * Subtracts two numbers - this value minus other (param)
+	 * @param double
+	 * @return double
+	 */
 	private double subtract(double other) {
 		int otherExp = getExp(other);
 		int thisExp = getExp(_coord);

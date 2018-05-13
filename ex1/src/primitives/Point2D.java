@@ -1,8 +1,8 @@
 package primitives;
 
 public class Point2D {
-	private Coordinate _x;
-	private Coordinate _y;
+	protected Coordinate _x;
+	protected Coordinate _y;
 	
 	public Point2D(double x, double y) {
 		_x = new Coordinate(x);
@@ -29,6 +29,10 @@ public class Point2D {
 
 	@Override
 	public boolean equals(Object obj) {
+		if (obj == null)
+			return false;
+		if (this == obj)
+			return true;
 		if (!(obj instanceof Point2D))
 			return false;
 		Point2D oth = (Point2D)obj;

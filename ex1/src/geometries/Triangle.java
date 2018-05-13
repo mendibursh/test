@@ -29,12 +29,4 @@ public class Triangle extends Plane {
 		return _P3;
 	}
 	
-	
-	@Override
-	public Vector GetNormal(Point3D _other) {
-			return super.GetNormal(_other);
-	}
-	
-	
-	
 }

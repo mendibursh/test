@@ -13,7 +13,6 @@ abstract public class Geometry {
 			
 		}
 		
-		abstract public Vector GetNormal(Point3D _other);
-		
-		
+		abstract public Vector getNormal(Point3D _other);
+			
 }

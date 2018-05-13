@@ -1,51 +1,38 @@
 package primitives;
 
-public class Ray extends Vector
-{
-    Point3D _point;
-    Vector _direction;
+public class Ray {
+	private Point3D _point;
+	private Vector _direction;
 
-    // ****** Constructors ********* //
-    
-    public Ray(Vector _direction ,Point3D _point) //constructor with parameters
-    {
-        super(_direction);
-        this._point = new Vector(_point);
-    }
-    
-    public Ray(Ray ray) //copy constructor
-    {
-        super(ray._direction);
-        this._point = ray.getPoint();
-    }
+	// ****** Constructors ********* //
 
-    // ****** Getters/Setters ********* //
-    
-    public Point3D getPoint() 
-    {
-        return new Point3D(_point);
-    }
+	public Ray(Vector _direction, Point3D _point) {
+		this._direction = new Vector(_direction);
+		this._point = new Vector(_point).normalize();
+	}
 
-    public void setPoint(Point3D _point) 
-    {
-        this._point = new Point3D(_point);
-    }
+	/**
+	 * 
+	 * @param ray
+	 */
+	public Ray(Ray ray) {
+		super(ray._direction);
+		this._point = new Point3D(ray.getPoint());
+	}
 
-    public Vector getDirection() 
-    {
-        return new Vector(_direction);
-    }
-    
-    public void setDirection(Vector _direction) 
-    {    
-        this._direction = new Vector(_direction);
-    }
+	// ****** Getters/Setters ********* //
 
-	
-    @Override
-    public String toString() 
-    {
-        return "(" + _point + "," + _direction + ")";
-    }
+	public Point3D getPoint() {
+		return new Point3D(_point);
+	}
+
+	public Vector getDirection() {
+		return new Vector(_direction);
+	}
+
+	@Override
+	public String toString() {
+		return "(" + _point + "," + _direction + ")";
+	}
 
 }

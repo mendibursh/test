@@ -1,32 +1,33 @@
 package primitives;
 
-public class Vector extends Point3D {
+public class Vector {
 
-	private Point3D _vec;
+	private Point3D _head;
 	
 	public Vector(Point3D p) {
-		super(p);
-		_vec = new Point3D(p);
+		if (Point3D.ZERO.equals(p))
+			throw new IllegalArgumentException("Zero vector is invalid");
+		_head = new Point3D(p);
 	}
 	
 	public Vector(double x, double y,double z) {
-		 super(x,y,z);
-		_vec = new Point3D(x,y,z);
+		_head = new Point3D(x,y,z);
+		if (Point3D.ZERO.equals(_head))
+			throw new IllegalArgumentException("Zero vector is invalid");
 	}
 	
 	public Vector(Vector other) {
-		super(other._vec);
-		_vec = new Point3D(other._vec);
+		_head = new Point3D(other._head);
 	}
 	
 	public Point3D get_vec() {
-		return _vec;
+		return _head;
 	}
 
 
 	// Adding vector to other vector 
 	public Vector add(Vector other){
-		double newX = this.getX().add(other.getX()).get();
+		double newX = _head.getX().add(other.getX()).get();
 		double newY = this.getY().add(other.getY()).get();
 		double newZ = this.getZ().add(other.getZ()).get();
 		return new Vector(newX,newY,newZ);
@@ -48,14 +49,14 @@ public class Vector extends Point3D {
 	}
 	
 	// 
-	public double DotProduct (Vector one , Vector two){
+	public double dotProduct (Vector two){
 		double x = one.getX().get() * two.getX().get();
 		double y = one.getY().get() * two.getY().get();
 		double z = one.getZ().get() * two.getZ().get();
 		return x + y + z ;
 	}
 	
-	public Vector CrossProduct (Vector one , Vector two){
+	public Vector crossProduct (Vector two){
 		double x = one.getY().get() * two.getZ().get() - one.getZ().get() * two.getY().get() ;
 		double y = one.getZ().get() * two.getX().get() - one.getX().get() * two.getZ().get();
 		double z = one.getX().get() * two.getY().get() - one.getY().get() * two.getX().get();
@@ -78,8 +79,8 @@ public class Vector extends Point3D {
 			double x = this.getX().get() / this.length();
 			double y = this.getY().get() / this.length();
 			double z = this.getZ().get() / this.length();
-			 // this._vec = new Point3D(x, y, z);
-			return new Vector(this).Scalar(1/length());		
+			this._head = new Point3D(x, y, z);
+			return this;		
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -97,7 +98,7 @@ public class Vector extends Point3D {
 	
 	@Override
 	public String toString() {
-		return this._vec.toString();
+		return this._head.toString();
 	}
 	
 }
