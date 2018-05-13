@@ -1,0 +1,39 @@
+package geometries;
+
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Sphere extends RadialGeometry{
+	
+	private Point3D _center;
+	
+	public Sphere(Point3D center , double _Radios) {
+		super(_Radios);
+		_center = new Point3D(center);
+	}
+
+	public Point3D get_center() {
+		return _center;
+	}
+	
+	public double get_Radios() {
+		return super.getRadius();
+	}
+	
+	@Override
+	public Vector getNormal(Point3D _other) {	
+		return get_center().subtract(_other);
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Center " + get_center().toString() + "Radios " + get_Radios();
+	}
+
+	
+	
+	
+	
+
+}
