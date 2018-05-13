@@ -1,5 +1,7 @@
 package primitives;
 
+import com.sun.org.apache.xalan.internal.xsltc.runtime.Parameter;
+
 public class Vector {
 
 	private Point3D _head;
@@ -27,58 +29,51 @@ public class Vector {
 
 	// Adding vector to other vector 
 	public Vector add(Vector other){
-		double newX = _head.getX().add(other.getX()).get();
-		double newY = this.getY().add(other.getY()).get();
-		double newZ = this.getZ().add(other.getZ()).get();
+		double newX = _head.getX().add(other._head.getX()).get();
+		double newY = _head.getY().add(other._head.getY()).get();
+		double newZ = _head.getZ().add(other._head.getZ()).get();
 		return new Vector(newX,newY,newZ);
 	}
 	
 	public Vector subtract(Vector other) {
-		double newX = this.getX().subtract(other.getX()).get();
-		double newY = this.getY().subtract(other.getY()).get();
-		double newZ = this.getZ().subtract(other.getZ()).get();
+		double newX = _head.getX().subtract(other._head.getX()).get();
+		double newY = _head.getY().subtract(other._head.getY()).get();
+		double newZ = _head.getZ().subtract(other._head.getZ()).get();
 		return new Vector(newX,newY,newZ);
 	}
 	
 	// multiple vector by scalar 
 	public Vector Scalar (double num) {
-		double newX = this.getX().get() * num;
-		double newY = this.getY().get() * num;
-		double newZ = this.getZ().get() * num;
+		double newX = _head.getX().get() * num;
+		double newY = _head.getY().get() * num;
+		double newZ = _head.getZ().get() * num;
 		return new Vector(newX, newY, newZ);
 	}
 	
 	// 
 	public double dotProduct (Vector two){
-		double x = one.getX().get() * two.getX().get();
-		double y = one.getY().get() * two.getY().get();
-		double z = one.getZ().get() * two.getZ().get();
+		double x = _head.getX().get() * two._head.getX().get();
+		double y = _head.getY().get() * two._head.getY().get();
+		double z = _head.getZ().get() * two._head.getZ().get();
 		return x + y + z ;
 	}
 	
 	public Vector crossProduct (Vector two){
-		double x = one.getY().get() * two.getZ().get() - one.getZ().get() * two.getY().get() ;
-		double y = one.getZ().get() * two.getX().get() - one.getX().get() * two.getZ().get();
-		double z = one.getX().get() * two.getY().get() - one.getY().get() * two.getX().get();
+		double x = _head.getY().get() * two._head.getZ().get() - _head.getZ().get() * two._head.getY().get() ;
+		double y = _head.getZ().get() * two._head.getX().get() - _head.getX().get() * two._head.getZ().get();
+		double z = _head.getX().get() * two._head.getY().get() - _head.getY().get() * two._head.getX().get();
 		return new Vector(x, y, z);
 	}
-	
-	//  
-	public double CalculteVec (Vector one) {
-		double x = one.getX().get();
-		double y = one.getY().get();
-		double z = one.getZ().get();
-		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
-	}
+
 	
 	public Vector normalize(){
 		 //if (_vec.getX().get()  == 0.0||_vec.getY().get()  == 0.0 ||_vec.getZ().get() == 0.0) {
 			//throw new Exception("divide by zero");
 		
 		try {
-			double x = this.getX().get() / this.length();
-			double y = this.getY().get() / this.length();
-			double z = this.getZ().get() / this.length();
+			double x = _head.getX().get() / this.length();
+			double y = _head.getY().get() / this.length();
+			double z = _head.getZ().get() / this.length();
 			this._head = new Point3D(x, y, z);
 			return this;		
 		}
@@ -89,16 +84,33 @@ public class Vector {
 	}
 	
 		
-	
 	public double length() 
     {
-        return Math.sqrt(Math.pow(this.getX().get() , 2) + 
-        		Math.pow(this.getY().get(), 2) + Math.pow(this.getZ().get(),2));
+		double x = _head.getX().get();
+		double y = _head.getY().get();
+		double z = _head.getZ().get();
+		return Math.sqrt((x*x) + (y*y) + (z*z));
     }
+	/**
+	 * @param obj
+	 * @author mendi bursh
+	 * 
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null)
+			return false;
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Vector))
+			return false;
+		Vector oth = (Vector)obj;
+		return this._head.equals(oth._head);
+	}
 	
 	@Override
 	public String toString() {
-		return this._head.toString();
+		return _head.toString();
 	}
 	
 }

@@ -23,9 +23,9 @@ public class Point3D extends Point2D {
 	}
 
 	public Point3D add(Vector other) {
-		double newX = this.getX().add(other.getX()).get();
-		double newY = this.getY().add(other.getY()).get();
-		double newZ = this.getZ().add(other.getZ()).get();
+		double newX = this.getX().add(other.get_vec().getX()).get();
+		double newY = this.getY().add(other.get_vec().getY()).get();
+		double newZ = this.getZ().add(other.get_vec().getZ()).get();
 		return new Point3D(newX, newY, newZ);
 	}
 

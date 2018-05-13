@@ -7,8 +7,8 @@ public class Ray {
 	// ****** Constructors ********* //
 
 	public Ray(Vector _direction, Point3D _point) {
-		this._direction = new Vector(_direction);
-		this._point = new Vector(_point).normalize();
+		this._direction = new Vector(_direction).normalize();
+		this._point = new Point3D(_point);
 	}
 
 	/**
@@ -16,11 +16,10 @@ public class Ray {
 	 * @param ray
 	 */
 	public Ray(Ray ray) {
-		super(ray._direction);
 		this._point = new Point3D(ray.getPoint());
 	}
 
-	// ****** Getters/Setters ********* //
+	// ****** Getters ********* //
 
 	public Point3D getPoint() {
 		return new Point3D(_point);
@@ -34,5 +33,5 @@ public class Ray {
 	public String toString() {
 		return "(" + _point + "," + _direction + ")";
 	}
-
+	
 }

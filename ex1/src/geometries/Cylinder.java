@@ -24,8 +24,10 @@ public class Cylinder extends RadialGeometry {
 	
 	
 	@Override
-	public Vector getNormal(Point3D _other) {
-		Vector a = new Point3D(_other).subtract(_axisPoint);
+	public Vector getNormal(Point3D other) {
+		
+		if(other == null) throw new IllegalArgumentException("point canno be null");
+		Vector a = new Point3D(other).subtract(_axisPoint);
 		Vector c = new Vector(a.Scalar(a.dotProduct(get_axisDirection())/ get_axisDirection().length()));
 		
 		return get_axisPoint().subtract(c.get_vec());
