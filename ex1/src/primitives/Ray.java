@@ -17,6 +17,7 @@ public class Ray {
 	 */
 	public Ray(Ray ray) {
 		this._point = new Point3D(ray.getPoint());
+		this._direction = new Vector(ray.getDirection());
 	}
 
 	// ****** Getters ********* //
