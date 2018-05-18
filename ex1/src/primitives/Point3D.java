@@ -19,7 +19,7 @@ public class Point3D extends Point2D {
 
 	public Point3D(Point3D other) {
 		super(other);
-		_z = new Coordinate(this._z);
+		_z = new Coordinate(other._z);
 	}
 
 	public Point3D add(Vector other) {

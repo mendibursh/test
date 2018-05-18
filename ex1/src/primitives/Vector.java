@@ -51,11 +51,11 @@ public class Vector {
 	}
 	
 	// 
-	public double dotProduct (Vector two){
+	public Coordinate dotProduct (Vector two){
 		double x = _head.getX().get() * two._head.getX().get();
 		double y = _head.getY().get() * two._head.getY().get();
 		double z = _head.getZ().get() * two._head.getZ().get();
-		return x + y + z ;
+		return new Coordinate(x + y + z) ;
 	}
 	
 	public Vector crossProduct (Vector two){
