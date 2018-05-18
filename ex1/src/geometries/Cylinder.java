@@ -28,7 +28,8 @@ public class Cylinder extends RadialGeometry {
 		
 		if(other == null) throw new IllegalArgumentException("point canno be null");
 		Vector a = new Point3D(other).subtract(_axisPoint);
-		Vector c = new Vector(a.Scalar(a.dotProduct(get_axisDirection())/ get_axisDirection().length()));
+	    //	a.Scalar(a.dotProduct(get_axisDirection())/ get_axisDirection().length())
+		Vector c = new Vector(a);
 		
 		return get_axisPoint().subtract(c.get_vec());
 	}
