@@ -9,7 +9,7 @@ public class Point3D extends Point2D {
 		super(x, y);
 		if (z == null)
 			throw new IllegalArgumentException("coordinate cannot be null");
-		_z = z;
+		_z = new Coordinate(z);
 	}
 
 	public Point3D(double x, double y, double z) {
@@ -29,19 +29,19 @@ public class Point3D extends Point2D {
 		return new Point3D(newX, newY, newZ);
 	}
 
-	public Vector subtract(Point3D two) {
-		double newX = this.getX().subtract(two.getX()).get();
-		double newY = this.getY().subtract(two.getY()).get();
-		double newZ = this.getZ().subtract(two.getZ()).get();
+	public Vector subtract(Point3D other) {
+		double newX = this.getX().subtract(other.getX()).get();
+		double newY = this.getY().subtract(other.getY()).get();
+		double newZ = this.getZ().subtract(other.getZ()).get();
 		return new Vector(newX, newY, newZ);
 	}
 
 	// public Vector Subtract(Point3D other) {}
 
-	public double distance(Point3D two) {
-		double x = this._x.get() - two._x.get();
-		double y = getY().get() - two.getY().get();
-		double z = getZ().get() - two.getZ().get();
+	public double distance(Point3D other) {
+		double x = this.getX().get() - other.getX().get();
+		double y = this.getY().get() - other.getY().get();
+		double z = this.getZ().get() - other.getZ().get();
 		return Math.sqrt(x * x + y * y + z * z);
 	}
 
